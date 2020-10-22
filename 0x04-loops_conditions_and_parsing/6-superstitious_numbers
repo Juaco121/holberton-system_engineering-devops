@@ -8,9 +8,12 @@ while [ $i -le 20 ]
 do
     echo $i
     case $i in
-	4) echo "bad luck from China";;
-	9) echo "bad luck from Japan";;
-	17) echo "bad luck from China";;
+	4) 
+        echo "bad luck from China";;
+	9) 
+        echo "bad luck from Japan";;
+	17) 
+        echo "bad luck from China";;
     esac
-    i=$((i += 1))
+    ((i++))
 done
