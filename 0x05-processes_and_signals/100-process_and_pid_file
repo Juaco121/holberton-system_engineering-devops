@@ -3,7 +3,7 @@
 
 NAME="/var/run/dhkscript.pid"
 sudo touch $NAME
-bash -c echo $$ > $NAME
+echo $$ > $NAME
 
 i=1
 
