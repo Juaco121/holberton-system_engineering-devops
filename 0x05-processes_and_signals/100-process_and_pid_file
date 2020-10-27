@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # Creates a file that contains its PID and handles various signals
 
-NAME="/var/run/holbertonscript.pid"
+NAME="/var/run/dhkscript.pid"
 sudo touch $NAME
-sudo bash -c echo $$ > $NAME
+bash -c echo $$ > $NAME
 
 i=1
 
