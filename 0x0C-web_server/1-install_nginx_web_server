@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-# Install nginx web server
-apt-get update
-apt-get -y install nginx
+# Install nginx on your web-01 server
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
 echo "Holberton School" > /var/www/html/index.nginx-debian.html
-service nginx start
+sudo service nginx start
