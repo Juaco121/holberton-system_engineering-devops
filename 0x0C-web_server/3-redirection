@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# configure a Ubuntu machine with Ngin-X
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
+echo "Holberton School for the win!" > /var/www/html/index.nginx-debian.html
+sed -i '/listen 80 default_server;/a rewrite ^/redirect_me https://www.youtube.com/watch?v=YvVonQ7LUJ0 permanent;' /etc/nginx/sites-available/default
+sudo service nginx restart
