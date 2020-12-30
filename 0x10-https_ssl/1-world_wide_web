@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Look for sub domain features
+
+if [ "$#" == 2 ]
+then
+    arg=$2
+else
+    arg=("www"
+         "lb-01"
+         "web-01"
+         "web-02"
+         )
+fi
+
+for arg in "${arg[@]}"
+do
+    echo -n "The subdomain $arg"
+    dig "$arg.$1" | grep -A1 'ANSWER SECTION:' | tail -n1 | awk '{print " is a " $4 " record and points to " $5}'
+done
