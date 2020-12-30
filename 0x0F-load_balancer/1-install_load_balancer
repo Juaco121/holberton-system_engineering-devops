@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+#  Bash script that configures a new Ubuntu machine to HAproxy
+sudo apt-get -y update
+sudo apt-get -y install haproxy
+sudo sed -i '/#EXTRAOPTS="-de -m 16"/a ENABLED=1' /etc/default/haproxy
+echo "
+frontend front
+    bind *:80
+    mode http
+    default_backend back
+backend back
+    balance roundrobin
+    server 1958-web-01 34.74.59.190:80 check
+    server 1958-web-02 35.231.41.104:80 check" >> /etc/haproxy/haproxy.cfg
+sudo service haproxy restart
