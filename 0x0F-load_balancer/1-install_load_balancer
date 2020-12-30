@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#  Bash script that configures a new Ubuntu machine to HAproxy
+# Bash script that configures a new Ubuntu machine to HAproxy
 sudo apt-get -y update
 sudo apt-get -y install haproxy
 sudo sed -i '/#EXTRAOPTS="-de -m 16"/a ENABLED=1' /etc/default/haproxy
