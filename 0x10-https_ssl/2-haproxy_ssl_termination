@@ -42,7 +42,7 @@ frontend firstbalance
           default_backend servers
 
 frontend www-https
-    bind *:443 ssl crt /etc/haproxy/certs/www.ricardoarquimedes.tech.pem
+    bind *:443 ssl crt /etc/haproxy/certs/www.juanfer.tech.pem
     reqadd X-Forwarded-Proto:\ https
     acl letsencrypt-acl path_beg /.well-known/acme-challenge/
     use_backend letsencrypt-backend if letsencrypt-acl
@@ -50,8 +50,8 @@ frontend www-https
     
 backend servers
     balance roundrobin
-    server 1877-web-01 35.190.136.16:80 check
-    server 1877-web-02 35.231.20.58:80 check
+    server 1958-web-01 34.74.59.190:80 check
+    server 1958-web-02 35.231.41.104:80 check
 
 backend letsencrypt-backend
    server letsencrypt 127.0.0.1:54321
